@@ -1,41 +1,28 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = null;
-
-        String line = br.readLine();
-        if (line == null) return;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         
-        int t = Integer.parseInt(line.trim());
-
-        while (t-- > 0) {
-            line = br.readLine();
-            while (line != null && line.trim().isEmpty()) {
-                line = br.readLine();
-            }
-            if (line == null) break;
+        if (scanner.hasNextInt()) {
+            int T = scanner.nextInt();
             
-            int n = Integer.parseInt(line.trim());
-            
-            int max = 0;
-            
-            st = new StringTokenizer(br.readLine());
-            for (int i = 0; i < n; i++) {
-                if (!st.hasMoreTokens()) {
-                    st = new StringTokenizer(br.readLine());
+            while (T > 0) {
+                int N = scanner.nextInt();
+                int maxHeight = Integer.MIN_VALUE;
+                
+                for (int i = 0; i < N; i++) {
+                    int height = scanner.nextInt();
+                    if (height > maxHeight) {
+                        maxHeight = height;
+                    }
                 }
-                int height = Integer.parseInt(st.nextToken());
-                if (height > max) {
-                    max = height;
-                }
+                
+                System.out.println(maxHeight);
+                T--;
             }
-            
-            System.out.println(max);
         }
+        
+        scanner.close();
     }
 }
