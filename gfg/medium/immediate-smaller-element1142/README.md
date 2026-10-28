@@ -43,12 +43,9 @@ Explanation: 4 will be updated to 1 and 1 will be updated to -1.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-28T08:46:20.303Z  
+**Submitted:** 2026-10-28T08:47:14.741Z  
 
 ```java
-
-import java.util.*;
-
 class Solution {
     public ArrayList<Integer> nextSmallerEle(int[] arr) {
         int n = arr.length;
